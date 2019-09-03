@@ -28,7 +28,6 @@
 
 
 (defn get-friend-suggestions [storage email-profile]
-
   (-> (profile-repository/get-all storage)
       (get-all-linked-me email-profile)
       (get-friends email-profile)

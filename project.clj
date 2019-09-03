@@ -8,7 +8,6 @@
                  [compojure "1.6.1"]
                  [ring/ring-json "0.4.0"]
                  [clj-http "3.10.0"]
-                 [lein-cloverage "1.0.7-SNAPSHOT"]
                  [ring/ring-defaults "0.3.2"]]
   :ring {:handler nukr.handler/app}
   :profiles
