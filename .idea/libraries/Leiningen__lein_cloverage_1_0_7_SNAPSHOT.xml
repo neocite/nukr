@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: lein-cloverage:1.0.7-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/lein-cloverage/lein-cloverage/1.0.7-SNAPSHOT/lein-cloverage-1.0.7-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
