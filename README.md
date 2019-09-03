@@ -1,5 +1,6 @@
 # nukr
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8bac0d116f4e42cfb3cdb4a814ce54d9)](https://app.codacy.com/app/neocite/nukr?utm_source=github.com&utm_medium=referral&utm_content=neocite/nukr&utm_campaign=Badge_Grade_Dashboard)
 A new social network [![CircleCI](https://circleci.com/gh/neocite/nukr.svg?style=svg)](https://circleci.com/gh/neocite/nukr)
 
 ## Usage
