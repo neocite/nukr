@@ -15,7 +15,7 @@
                     :phone "+1-202-555-0141" })
 
 (fact "Add friend"
-      (profile/add-friend! darth-vader storm-trooper) => (just { :name "Darth Vader"
+      (profile/add-friend darth-vader storm-trooper) => (just { :name "Darth Vader"
                                                                   :email "darth.vader@disney.com"
                                                                   :phone "+1-202-555-0140"
                                                                   :friends {{ :name "Storm Trooper"

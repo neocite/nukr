@@ -14,7 +14,7 @@
 
 
 (fact "Add friend in profile"
-      (profile-service/add-friend storage (:email b) (:email d)) => (just { :name "B"
+      (profile-service/add-friend! storage (:email b) (:email d)) => (just { :name "B"
                                                                             :email "b@something.com"
                                                                             :phone "+1-202-555-0141"
                                                                             :friends {{ :name "D"
@@ -22,22 +22,22 @@
                                                                                         :phone "+1-202-555-0143" } {}} }))
 (def t {:email "t@something.com"})
 (fact "Add friend in invalid profile"
-      (profile-service/add-friend storage (:email t) (:email d)) => (just ()))
+      (profile-service/add-friend! storage (:email t) (:email d)) => (just ()))
 
 (fact "Add invalid friend in profile"
-      (profile-service/add-friend storage (:email d) (:email t)) => (just ()))
+      (profile-service/add-friend! storage (:email d) (:email t)) => (just ()))
 
 (fact "Add invalid friend in invalid profile"
-      (profile-service/add-friend storage (:email t) (:email t)) => (just ()))
+      (profile-service/add-friend! storage (:email t) (:email t)) => (just ()))
 
 (def e (profile-service/add storage "E" "e@something.com" "+1-202-555-0144"))
 (def f (profile-service/add storage "F" "f@something.com" "+1-202-555-0145"))
 (def g (profile-service/add storage "G" "g@something.com" "+1-202-555-0146"))
 (def h (profile-service/add storage "H" "h@something.com" "+1-202-555-0147"))
 
-(profile-service/add-friend storage (:email b) (:email h))
-(profile-service/add-friend storage (:email b) (:email e))
-(profile-service/add-friend storage (:email g) (:email f))
+(profile-service/add-friend! storage (:email b) (:email h))
+(profile-service/add-friend! storage (:email b) (:email e))
+(profile-service/add-friend! storage (:email g) (:email f))
 
 (fact "Get suggestions from friends"
       (profile-service/get-friend-suggestions storage (:email d)) =>

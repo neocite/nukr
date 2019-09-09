@@ -7,12 +7,14 @@
     (profile-repository/add! storage profile)
     profile))
 
-(defn add-friend [storage profile-email friend-profile-email]
+(defn add-friend! [storage profile-email friend-profile-email]
   (let [profile (profile-repository/search-by-email storage profile-email)
         friend (profile-repository/search-by-email storage friend-profile-email)
-        new-profile (profile/add-friend! profile friend)]
+        new-connection (profile/add-friend profile friend)]
 
-    (profile-repository/add! storage new-profile) new-profile))
+
+
+      (profile-repository/add! storage new-connection) new-connection))
 
 (defn- get-first-item-but-me-by-email [collection email]
   (map (fn [item] (if (not= email (:email (first item))) (first item))) collection))

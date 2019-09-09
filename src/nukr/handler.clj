@@ -1,7 +1,5 @@
 (ns nukr.handler
   (:require [compojure.core :refer :all]
-            [compojure.route :as route]
-            [cheshire.core :as json]
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]
             [ring.middleware.json :refer [wrap-json-body]]
             [nukr.infrastructure.helper-http :as http-wrapper]
@@ -35,7 +33,7 @@
 
   (POST "/link" data-request
                                 (if (can-create-link? (:body data-request))
-                                  (-> (profile-service/add-friend storage (:profile-email (:body data-request)) (:friend-profile-email (:body data-request)))
+                                  (-> (profile-service/add-friend! storage (:profile-email (:body data-request)) (:friend-profile-email (:body data-request)))
                                       (http-wrapper/http-created-json-response))
                                   (http-wrapper/http-invalid-json-response)))
   (GET "/friend-suggestions" params
